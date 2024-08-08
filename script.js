@@ -5,3 +5,8 @@ function getComputerChoice() {
     return computerResponse;
 }
 
+function getHumanChoice() {
+    let promptChoice = prompt('What is your choice for rock, paper, scissors?');
+    console.log(promptChoice);
+    return promptChoice;
+}
