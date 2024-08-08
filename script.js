@@ -50,3 +50,11 @@ function playRound(humanChoice = getComputerChoice(), computerChoice = getComput
    
     
 } 
+
+
+function playGame() {
+    for (let round = 0; round <  5; round++) {
+            console.log(playRound());
+        }
+        
+}
