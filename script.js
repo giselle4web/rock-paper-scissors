@@ -41,9 +41,9 @@ function playRound(humanChoice = getComputerChoice(), computerChoice = getComput
     else if(humanChoice == 'Scissors' || 'scissors' && computerChoice == 'Rock') {
      console.log("You lose! Rock beats Scissors") && computerScore++;
     } else if(humanChoice == 'Rock' || 'rock'&& computerChoice == 'Paper') {
-     console.log("You lose! Paper beats Rock") && computerScore && humanScore++;
+     console.log("You lose! Paper beats Rock") && computerScore++;
     }  else if(humanChoice == 'Paper' || 'paper' && computerChoice == 'Scissors') {
-     console.log("You lose! Scissors beats Paper") && computerScore && humanScore++;
+     console.log("You lose! Scissors beats Paper") && computerScore++;
     }  
     
     return humanChoice && computerChoice;
