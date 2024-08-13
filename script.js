@@ -59,10 +59,11 @@ function playGame() {
         
 }
 
-function myFunction() {
-    playRound();
-  }
-
   function log() {
     console.log("Start the game! Open the console. Example: playRound('Rock')");
   }
+
+  function log2() {
+    console.log(playRound());
+  }
+
