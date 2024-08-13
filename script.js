@@ -41,9 +41,9 @@ function playRound(humanChoice = getComputerChoice(), computerChoice = getComput
     else if(humanChoice == 'Scissors' || 'scissors' && computerChoice == 'Rock') {
      console.log("You lose! Rock beats Scissors") && computerScore++;
     } else if(humanChoice == 'Rock' || 'rock'&& computerChoice == 'Paper') {
-     console.log("You win! Paper beats Rock") && computerScore && humanScore++;
+     console.log("You lose! Paper beats Rock") && computerScore && humanScore++;
     }  else if(humanChoice == 'Paper' || 'paper' && computerChoice == 'Scissors') {
-     console.log("You win! Scissors beats Paper") && computerScore && humanScore++;
+     console.log("You lose! Scissors beats Paper") && computerScore && humanScore++;
     }  
     
     return humanChoice && computerChoice;
@@ -69,18 +69,39 @@ function playGame() {
 
   document.getElementById("btn-1").addEventListener("click", function() {
     logDirections();
-  })
+    document.getElementById("directions").textContent = "Start the game! Use buttons or open the console to play. Example: playRound('Rock')"
+  });
 
   document.getElementById("btn-2").addEventListener("click", function() {
     playRound('Rock');
-  })
+    document.getElementById('score').append(`Score: ${humanScore++}, `)
+    if(humanScore >= 6) {
+      document.getElementById("score").textContent = "Winner!";
+    }
+  });
+  
 
   document.getElementById("btn-3").addEventListener("click", function() {
     playRound('Paper');
+    document.getElementById('score').append(`Score: ${humanScore++}, `)
+    if(humanScore >= 6) {
+      document.getElementById("score").textContent = "Winner!";
+    }
+
   })
 
   document.getElementById("btn-4").addEventListener("click", function() {
     playRound('Scissors');
+    document.getElementById('score').append(`Score: ${humanScore++}, `)
+    if(humanScore >= 6) {
+      document.getElementById("score").textContent = "Winner!";
+    }
   })
 
+
+  document.getElementById("btn-5").addEventListener("click", function() {
+    document.getElementById("score").textContent = "";
+    document.getElementById("directions").textContent = "";
+    humanScore = 0;
+  })
 
