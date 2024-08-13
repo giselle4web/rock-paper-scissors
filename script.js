@@ -41,9 +41,9 @@ function playRound(humanChoice = getComputerChoice(), computerChoice = getComput
     else if(humanChoice == 'Scissors' || 'scissors' && computerChoice == 'Rock') {
      console.log("You lose! Rock beats Scissors") && computerScore++;
     } else if(humanChoice == 'Rock' || 'rock'&& computerChoice == 'Paper') {
-     console.log("You win! Paper beats Rock") && computerScore++;
+     console.log("You win! Paper beats Rock") && computerScore && humanScore++;
     }  else if(humanChoice == 'Paper' || 'paper' && computerChoice == 'Scissors') {
-     console.log("You win! Scissors beats Paper") && computerScore++;
+     console.log("You win! Scissors beats Paper") && computerScore && humanScore++;
     }  
     
     return humanChoice && computerChoice;
@@ -59,11 +59,28 @@ function playGame() {
         
 }
 
-  function log() {
+  function logDirections() {
     console.log("Start the game! Open the console. Example: playRound('Rock')");
   }
 
   function log2() {
     console.log(playRound());
   }
+
+  document.getElementById("btn-1").addEventListener("click", function() {
+    logDirections();
+  })
+
+  document.getElementById("btn-2").addEventListener("click", function() {
+    playRound('Rock');
+  })
+
+  document.getElementById("btn-3").addEventListener("click", function() {
+    playRound('Paper');
+  })
+
+  document.getElementById("btn-4").addEventListener("click", function() {
+    playRound('Scissors');
+  })
+
 
